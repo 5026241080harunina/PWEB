@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap 4 Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale-1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>        
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+                    <br />
+
+                    <!-- Button to Open the Modal-->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        Jaguar E-Types
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="ModelNameLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                <!-- Modal Header-->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="ModelNameLabel">Details</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+
+                </div>
+
+                <!-- Modal body-->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="https://i.pinimg.com/1200x/ce/70/4a/ce704ae533ddc2d9392593fac59e1b85.jpg" class="img-fluid rounded">
+                        </div>
+                    </div>
+                    A timeless icon of speed and elegance. The Jaguar E-Type combines sleek British design with raw performance, featuring a long sculpted hood, wire wheels, and a cockpit built for the thrill of driving. Powered by a smooth inline-six engine, it delivers a driving experience that feels both refined and rebellious—classic motoring at its most seductive.
+                </div>
+
+                <!-- Modal footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
