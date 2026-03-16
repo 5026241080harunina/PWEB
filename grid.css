@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:black;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(18, 6, 2);
+        z-index: 1000;
+        padding: 16px 0;
+    }
+
+    .nav-container {
+        max-width: 1422px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .nav-logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #82000f
+    }
+
+    .subs-plan {
+        padding: 96px 20px;
+    }
+
+    .subs-container {
+        max-width: 1422px;
+        margin: 0 auto;
+    }
+
+    .subs-header {
+        text-align: left;
+        margin-bottom: 80px;
+    }
+
+    .subs-title {
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 64px;
+        margin-bottom: 24px;
+        color: white;
+    }
+
+    .subs-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 27px;
+        justify-content: center;
+    }
+
+    .subs-item {
+        border: 1px solid #1c0200;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .plan-header {
+        padding: 18px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .mobile {
+        background: linear-gradient(135deg, #d00018, #9c0012, #68000c);
+    }
+
+    .basic {
+        background: linear-gradient(135deg, #b60015, #82000f, #4e0009);
+    }
+
+    .standard {
+        background: linear-gradient(135deg, #9c0012, #68000c, #330006);
+    }
+
+    .premium {
+        background: linear-gradient(135deg, #82000f, #4e0009, #190003);
+    }
+
+    .plan-body {
+        padding: 20px;
+        color: #
+    }
+
+    .plan-body hr {
+        border: none;
+        border-top: 1px solid #1c0200;
+    }
+
+    .subs-column .subs-item {
+        width: 280px;
+        height: 600px;
+    }
