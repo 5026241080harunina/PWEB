@@ -70,7 +70,7 @@ body {
     }
 
     .subs-item {
-        border: 1px solid #1c0200;
+        border: 1px solid #4e0009;
         border-radius: 12px;
         overflow: hidden;
     }
@@ -99,12 +99,12 @@ body {
 
     .plan-body {
         padding: 20px;
-        color: #
+        color: white;
     }
 
     .plan-body hr {
         border: none;
-        border-top: 1px solid #1c0200;
+        border-top: 1px solid #4e0009;
     }
 
     .subs-column .subs-item {
