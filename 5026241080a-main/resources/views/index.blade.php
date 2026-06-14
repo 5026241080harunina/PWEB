@@ -9,7 +9,7 @@
 		<input type="text" name="cari" placeholder="Cari Pegawai .." class="form-control">
 		<input type="submit" value="CARI" class="btn btn-light">
 	</form>
-		
+	
 	<br/>
 	<table class="table table-triped table-hover">
 		<tr>

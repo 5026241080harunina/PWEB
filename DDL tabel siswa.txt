@@ -1,0 +1,8 @@
+
+CREATE TABLE `siswa` (
+  `NRP` varchar(10) NOT NULL,
+  `Nama` varchar(20) NOT NULL,
+  `Kelas` varchar(5) NOT NULL,
+  `TanggalLahir` date NOT NULL,
+  PRIMARY KEY (`NRP`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
