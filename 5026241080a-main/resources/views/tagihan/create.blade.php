@@ -1,8 +1,8 @@
 @extends('template')
-@section('title', 'Data Pelanggan')
+@section('title', 'Kode Soal tagihan_air')
 @section('konten')
 
-    <h2>Tambah Data Pelanggan</h2>
+    <h2>Input Tagihan Baru</h2>
 
     @if ($errors->any())
         <ul style="color: red;">
@@ -15,59 +15,50 @@
     <form action="{{ route('tagihan.store') }}" method="POST" onsubmit="return validasiForm()">
         @csrf
 
-        <p>
-            <label>No Meteran</label><br>
-            <input type="text" name="nometeran" id="nometeran" maxlength="10" value="{{ old('nometeran') }}">
-        </p>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">No Meteran</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="nometeran" id="nometeran" maxlength="6" value="{{ old('nometeran') }}">
+            </div>
+        </div>
 
-        <p>
-            <label>Penggunaan</label><br>
-            <input type="text" name="penggunaan" id="penggunaan" maxlength="20" value="{{ old('penggunaan') }}">
-        </p>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Meter Awal</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="meterawal" id="meterawal" value="{{ old('meterawal') }}">
+            </div>
+        </div>
 
-        <p>
-            <label>Total Tagihan</label><br>
-            <input type="text" name="totaltagihan" id="totaltagihan" maxlength="5" value="{{ old('totaltagihan') }}">
-        </p>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Meter Akhir</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="meterakhir" id="meterakhir" value="{{ old('meterakhir') }}">
+            </div>
+        </div>
 
-        <button type="submit">Simpan</button>
-        <a href="{{ route('tagihan.index') }}">Kembali</a>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+        <a href="{{ route('tagihan.index') }}" class="btn btn-secondary">Kembali</a>
     </form>
 
     <script>
         function validasiForm() {
-            let nometeran = document.getElementById('nometeran').value.trim();
             let meterawal = document.getElementById('meterawal').value.trim();
             let meterakhir = document.getElementById('meterakhir').value.trim();
 
-            if (meterakhir > (meterakhir + 20)) {
-                Swal.fire({
-                    title: "Kesalahan Input Data!",
-                    text: "Nama maksimal 20 karakter",
-                    icon: "error"
-                });
+            if (isNaN(meterawal) || isNaN(meterakhir) || meterawal === '' || meterakhir === '') {
+                alert("Meter Awal dan Meter Akhir harus berupa angka!");
                 return false;
             }
 
-            if (meterakhir != INT) {
-                Swal.fire({
-                    title: "Kesalahan Input Data!",
-                    text: "Kelas wajib diisi",
-                    icon: "error"
-                });
-                return false;
-            }
+            meterawal = parseInt(meterawal);
+            meterakhir = parseInt(meterakhir);
 
-            if (meterakhir != INT) {
-                Swal.fire({
-                    title: "Kesalahan Input Data!",
-                    text: "Kelas wajib diisi",
-                    icon: "error"
-                });
+            if (!(meterakhir > (meterawal + 20))) {
+                alert("Meter Akhir harus lebih besar dari (Meter Awal + 20)!");
                 return false;
             }
 
             return true;
-        }//
+        }
     </script>
 @endsection
