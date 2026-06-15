@@ -22,14 +22,15 @@
 
         @forelse($tagihan as $row)
             <tr>
-                <td>{{ $row->Nometeran }}</td>
-                <td>{{ $row->Penggunaan }}</td>
-                <td>{{ $row->Totaltagihan }}</td>
+                <td>{{ $row->id }}</td>
+                <td>{{ $row->nometeran }}</td>
+                <td>{{ $row->penggunaan }}</td>
+                <td>{{ $row->totaltagihan }}</td>
                 <td>
-                    <a href="{{ route('tagihan.edit', $row->Nometeran) }}" class="btn btn-warning">Edit</a>
+                    <a href="{{ route('tagihan.edit', $row->nometeran) }}" class="btn btn-warning">Edit</a>
 
 
-                    <form action="{{ route('tagihan.destroy', $row->Nometeran) }}" method="POST" style="display:inline;"
+                    <form action="{{ route('tagihan.destroy', $row->nometeran) }}" method="POST" style="display:inline;"
                         onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                         @csrf
                         @method('DELETE')

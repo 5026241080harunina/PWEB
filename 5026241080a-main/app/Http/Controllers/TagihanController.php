@@ -15,7 +15,7 @@ class TagihanController extends Controller
 
         foreach ($tagihan as $item) {
             $item->penggunaan = $item->meterakhir - $item->meterawal;
-            $item->total_tagihan = $item->penggunaan * 5000;
+            $item->totaltagihan = $item->penggunaan * 5000;
         }
 
         return view('tagihan.index', ['tagihan'=>$tagihan]);
@@ -52,19 +52,19 @@ class TagihanController extends Controller
         return redirect('/eas');
     }
 
-    public function edit($id)
+    public function edit($nometeran)
     {
         $tagihan = DB::table('tagihan_air')
-        ->where('id',$id)
+        ->where('nometeran',$nometeran)
         ->first();
 
         return view('tagihan.edit', ['tagihan'=>$tagihan]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $nometeran)
     {
         DB::table('tagihan_air')
-        ->where('id',$id)
+        ->where('nometeran',$nometeran)
         ->update([
             'nometeran'=>$request->nometeran,
             'meterawal'=>$request->meterawal,
@@ -74,10 +74,10 @@ class TagihanController extends Controller
         return redirect('/eas');
     }
 
-    public function hapus($id)
+    public function hapus($nometeran)
     {
         DB::table('tagihan_air')
-        ->where('id',$id)
+        ->where('nometeran',$nometeran)
         ->delete();
         return redirect('/eas');
     }
