@@ -6,6 +6,8 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\LatihanEASController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\TagihanController;
+
 
 
 Route::get('/', function () {
@@ -54,10 +56,19 @@ Route::post('/latihan/update', [PegawaiDBController::class, 'update']);
 Route::get('/latihan/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/latihan/cari', [PegawaiDBController::class, 'cari']);
 
-//route praets mobil
+//route praeas mobil
 Route::get('/mobil', [ MobilController::class, 'index'])->name('mobil.index');
 Route::get('/mobil/tambah', [ MobilController::class, 'create'])->name('mobil.create');
 Route::post('/mobil/store', [ MobilController::class, 'store'])->name('mobil.store');
 Route::get('/mobil/edit/{id}', [ MobilController::class, 'edit'])->name('mobil.edit');
 Route::put('/mobil/update', [ MobilController::class, 'update'])->name('mobil.update');
 Route::get('/mobil/hapus/{id}', [ MobilController::class, 'hapus'])->name('mobil.destroy');
+
+//route EAS tagihan
+Route::get('/eas', [ TagihanController::class, 'index'])->name('tagihan.index');
+Route::get('/eas/tambah', [ TagihanController::class, 'create'])->name('tagihan.create');
+Route::post('/eas/store', [ TagihanController::class, 'store'])->name('tagihan.store');
+Route::get('/eas/edit/{id}', [ TagihanController::class, 'edit'])->name('tagihan.edit');
+Route::put('/eas/update', [ TagihanController::class, 'update'])->name('tagihan.update');
+Route::get('/eas/hapus/{id}', [ TagihanController::class, 'hapus'])->name('tagihan.destroy');
+Route::get('/latihan/cari', [PegawaiDBController::class, 'cari']);
